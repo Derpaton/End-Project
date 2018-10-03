@@ -8,8 +8,8 @@ namespace End_Project.Controllers
 {
     public class HomeController : Controller
     {
-        // GET: Home yes
-        public ActionResult Index()
+       
+        public ActionResult PageView()
         {
             return View();
         }
