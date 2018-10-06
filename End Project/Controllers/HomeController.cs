@@ -9,7 +9,7 @@ namespace End_Project.Controllers
     public class HomeController : Controller
     {
        
-        public ActionResult PageView()
+        public ActionResult Index()
         {
             return View();
         }
