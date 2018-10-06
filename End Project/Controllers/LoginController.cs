@@ -9,7 +9,7 @@ namespace End_Project.Controllers
     public class LoginController : Controller
     {
         // GET: Login
-        public ActionResult Login()
+        public ActionResult Index()
         {
             return View();
         }
