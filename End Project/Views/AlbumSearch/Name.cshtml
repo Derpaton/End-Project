@@ -6,7 +6,7 @@
     @Html.TextBox("name")<input type="submit" value="Search Title" />
 
     if (Model.Count() == 0) {
-        <p> Nothing matched your stupid search. Fuck off with your shit! </p>
+        <p> Nothing matched your stupid search. Search something real! </p>
     }
     else {
         <table border="1" cellpadding="6">
@@ -22,16 +22,16 @@
 
                 <tr>
                     <td>
-                        @Html.TextBox("Title", i.Name, new { @readonly = "readonly" })
+                        @Html.TextBox("nameId", i.Name, new { @readonly = "readonly" })
                     </td>
                     <td>
-                        @Html.TextBox("Author", i.Author, new { @readonly = "readonly" })
+                        @Html.TextBox("authorId", i.Author, new { @readonly = "readonly" })
                     </td>
                     <td>
-                        @Html.TextBox("Genre", i.Genre, new { @readonly = "readonly" })
+                        @Html.TextBox("genreId", i.Genre, new { @readonly = "readonly" })
                     </td>
                     <td>
-                        @Html.TextBox("Year", i.Year, new { @readonly = "readonly" })
+                        @Html.TextBox("yearId", i.Year, new { @readonly = "readonly" })
                     </td>
                 </tr>
             </table>
