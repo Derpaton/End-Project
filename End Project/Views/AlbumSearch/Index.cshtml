@@ -1,0 +1,11 @@
+﻿
+@model End_Project.Models.Albums
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h3>Search by:</h3>
+<br />
+@Html.ActionLink("By title", "Name", "AlbumSearch", new { area = "" }, new { @class = "navbar-brand" }) <br />
+@Html.ActionLink("By author", "Artist", "AlbumSearch", new { area = "" }, new { @class = "navbar-brand" }) <br />
