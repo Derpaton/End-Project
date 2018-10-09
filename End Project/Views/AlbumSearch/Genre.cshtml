@@ -1,0 +1,59 @@
+﻿@model IEnumerable<End_Project.Models.Albums>
+
+@{
+    ViewBag.Title = "Genre";
+}
+
+<h2>Genre</h2>
+
+
+
+
+@using (Html.BeginForm("Genre", "AlbumSearch", FormMethod.Get)) {
+
+        <select name="genre" onchange="this.form.submit()">
+            <option disabled selected> -- select an option -- </option>
+            <option value="rock">Rock</option>
+            <option value="classic">Classic</option>
+            <option value="country">Country</option>
+            <option value="dansband">Dansband</option>
+            <option value="r&b">R&B</option>
+            <option value="godspel">Gospel</option>
+            <option value="metal">Metal</option>
+            <option value="other">Other</option>
+        </select>
+
+    if (Model.Count() == 0) {
+        <p> What a stupid choice. Choose something real! </p>
+    }
+    else {
+        <table border="1" cellpadding="6">
+
+            <tr class="intro">
+                <td>@Html.TextBox("nameId", "Title", new { @readonly = "readonly" })</td>
+                <td>@Html.TextBox("authorId", "Author", new { @readonly = "readonly" })</td>
+                <td>@Html.TextBox("genreId", "Genre", new { @readonly = "readonly" })</td>
+                <td>@Html.TextBox("yearId", "Year", new { @readonly = "readonly" })</td>
+            </tr>
+        </table>
+        foreach (var i in Model) {
+            <table border="1" cellpadding="6">
+
+                <tr>
+                    <td>
+                        @Html.TextBox("nameId", i.Name, new { @readonly = "readonly" })
+                    </td>
+                    <td>
+                        @Html.TextBox("authorId", i.Author, new { @readonly = "readonly" })
+                    </td>
+                    <td>
+                        @Html.TextBox("genreId", i.Genre, new { @readonly = "readonly" })
+                    </td>
+                    <td>
+                        @Html.TextBox("yearId", i.Year, new { @readonly = "readonly" })
+                    </td>
+                </tr>
+            </table>
+        }
+    }
+}
