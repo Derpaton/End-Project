@@ -12,7 +12,7 @@ namespace End_Project
     {
         protected void Application_Start()
         {
-            Database.SetInitializer<End_Project.Models.AlbumsContext>(null);
+            Database.SetInitializer<End_Project.Models.AlbumsDB>(null);
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
         }

@@ -14,19 +14,19 @@ namespace End_Project.Controllers {
         }
 
         public ActionResult Name(string name) {
-            AlbumsContext albCtx = new AlbumsContext();
+            AlbumsDB albCtx = new AlbumsDB();
             var album = albCtx.albums.Where(alb => alb.Name.Contains(name) || name == null);
             return View(album);
         }
 
         public ActionResult Artist(string artist) {
-            AlbumsContext albCtx = new AlbumsContext();
+            AlbumsDB albCtx = new AlbumsDB();
             var album = albCtx.albums.Where(alb => alb.Author.Contains(artist) || artist == null);
             return View(album);
         }
 
         public ActionResult Genre(string genre) {
-            AlbumsContext albCtx = new AlbumsContext();
+            AlbumsDB albCtx = new AlbumsDB();
             var album = albCtx.albums.Where(alb => alb.Genre.Contains(genre) || genre == null);
             return View(album);
         }

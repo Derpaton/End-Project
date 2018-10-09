@@ -148,6 +148,7 @@
     <Content Include="Views\AlbumSearch\Artist.cshtml" />
     <Content Include="Views\AlbumSearch\Name.cshtml" />
     <Content Include="Views\AlbumSearch\Genre.cshtml" />
+    <Content Include="Views\Login\Sucess.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -156,6 +157,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Util\Helpers\" />
     <Folder Include="Views\AlbumAdd\" />
     <Folder Include="Views\Default\" />
     <Folder Include="Views\Shared\" />

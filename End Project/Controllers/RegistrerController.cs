@@ -1,45 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using End_Project.Models;
+
 
 namespace End_Project.Controllers
 {
     public class RegistrerController : Controller
     {
-        // GET: Registrer
-        public ActionResult Index()
-        {
-            return View();
-        }
-
-        // GET: Registrer/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
-
-        // GET: Registrer/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: Registrer/Create
-        [HttpPost]
-        public ActionResult Create(FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
     }
 }
