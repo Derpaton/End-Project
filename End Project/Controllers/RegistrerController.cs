@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using End_Project.Models;
 
 namespace End_Project.Controllers
 {
@@ -14,32 +15,18 @@ namespace End_Project.Controllers
             return View();
         }
 
-        // GET: Registrer/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
-
         // GET: Registrer/Create
         public ActionResult Create()
         {
+            AlbumsContext usrCtx = new AlbumsContext();
+            Users usr = new Users() {
+                Name = "ds",
+                Username = "sd",
+                Password = "fvghnpig"
+            };
+            usrCtx.users.Add(usr);
+            usrCtx.SaveChanges();
             return View();
-        }
-
-        // POST: Registrer/Create
-        [HttpPost]
-        public ActionResult Create(FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
         }
     }
 }

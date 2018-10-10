@@ -6,7 +6,13 @@ using System.Web;
 
 
 namespace End_Project.Models {
-    public class AlbumsContext : DbContext {
-        public DbSet<Albums> albums { get; set; }
+
+    public partial class AlbumsContext : DbContext { 
+        public AlbumsContext()
+        : base("name=AlbumsContext") { }
+
+        public virtual DbSet<Users> users { get; set; }
+        public virtual DbSet<Albums> albums { get; set; }
+        
     }
 }

@@ -15,13 +15,15 @@ namespace End_Project.Controllers {
 
         public ActionResult Name(string name) {
             AlbumsContext albCtx = new AlbumsContext();
-            var album = albCtx.albums.Where(alb => alb.Name.Contains(name) || name == null);
+            var album = albCtx.albums.Where(alb => alb.Name.Contains(name));
             return View(album);
         }
 
         public ActionResult Artist(string artist) {
             AlbumsContext albCtx = new AlbumsContext();
             var album = albCtx.albums.Where(alb => alb.Author.Contains(artist) || artist == null);
+             
+                
             return View(album);
         }
 

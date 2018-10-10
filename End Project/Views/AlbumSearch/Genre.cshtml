@@ -7,8 +7,6 @@
 <h2>Genre</h2>
 
 
-
-
 @using (Html.BeginForm("Genre", "AlbumSearch", FormMethod.Get)) {
 
         <select name="genre" onchange="this.form.submit()">
@@ -30,7 +28,7 @@
         <table border="1" cellpadding="6">
 
             <tr class="intro">
-                <td>@Html.TextBox("nameId", "Title", new { @readonly = "readonly" })</td>
+                <td>@Html.TextBox("titleId", "Title", new { @readonly = "readonly" })</td>
                 <td>@Html.TextBox("authorId", "Author", new { @readonly = "readonly" })</td>
                 <td>@Html.TextBox("genreId", "Genre", new { @readonly = "readonly" })</td>
                 <td>@Html.TextBox("yearId", "Year", new { @readonly = "readonly" })</td>
@@ -41,7 +39,7 @@
 
                 <tr>
                     <td>
-                        @Html.TextBox("nameId", i.Name, new { @readonly = "readonly" })
+                        @Html.TextBox("titleId", i.Name, new { @readonly = "readonly" })
                     </td>
                     <td>
                         @Html.TextBox("authorId", i.Author, new { @readonly = "readonly" })
