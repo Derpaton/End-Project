@@ -1,17 +1,16 @@
 ﻿@model End_Project.Models.Users
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Register";
 }
 
-<h2>Index</h2>
+<h2>Register</h2>
 
-@using (Html.BeginForm()) 
-{
+@using (Html.BeginForm("Create", "Registrer", FormMethod.Post)) {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Users</h4>
+
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">

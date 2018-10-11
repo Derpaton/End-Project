@@ -12,21 +12,25 @@ namespace End_Project.Controllers
         // GET: Registrer
         public ActionResult Index()
         {
-            return View();
+            Users usr = new Users();
+            return View(usr);
         }
 
         // GET: Registrer/Create
-        public ActionResult Create()
-        {
-            AlbumsContext usrCtx = new AlbumsContext();
-            Users usr = new Users() {
-                Name = "ds",
-                Username = "sd",
-                Password = "fvghnpig"
-            };
-            usrCtx.users.Add(usr);
-            usrCtx.SaveChanges();
-            return View();
+        public ActionResult Create(Users usr) {
+            if (ModelState.IsValid) {
+                AlbumsContext albCtx = new AlbumsContext();
+                albCtx.users.Add(usr);
+                albCtx.SaveChanges();
+
+                return View();
+            }
+            else {
+                return View("Index");
+            }
         }
     }
 }
+
+
+

@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using End_Project.Global;
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -27,9 +29,14 @@
 
                 @Html.ActionLink("Search in Collection", "Index", "AlbumSearch", new { area = "" }, new { @class = "navbar-brand" })
 
-                @Html.ActionLink("Add record to collection", "Index", "AlbumAdd", new { area = "" }, new { @class = "navbar-brand" })
+                @if (Global_vars.logged_in) {
+                    @Html.ActionLink("Add record to collection", "Index", "AlbumAdd", new { area = "" }, new { @class = "navbar-brand" })
+                    @Html.ActionLink("Log out", "Logout", "Login", new { area = "" }, new { @class = "navbar-brand" })
+                }
 
-                @Html.ActionLink("Login", "Index", "Login", new { area = "" }, new { @class = "navbar-brand" })
+                else {
+                    @Html.ActionLink("Login", "Index", "Login", new { area = "" }, new { @class = "navbar-brand" })
+                }
 
                 @Html.ActionLink("Registrer", "Index", "Registrer", new { area = "" }, new { @class = "navbar-brand" })
             </div>
